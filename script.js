@@ -46,12 +46,12 @@ io.on('connection', (socket) => {
         });
       } else {
         socket.emit('chat message', {
-          nickname: "Server",
+          nickname: `Server`,
           msg: `User "${recipient}" not found in the chat`,
         });
       }
     } else {
-      io.emit('chat message', nickname + ": " + msg);
+      io.emit('chat message', { nickname: nickname, msg: msg });
     }
   });
 
@@ -67,8 +67,7 @@ io.on('connection', (socket) => {
 });
 //creates server
 const port = 3000;
-const ipAddress = "192.168.29.226"; // Add the IPv4 Address of your network here
-
+const ipAddress = "192.168.29.226";
 server.listen(port, ipAddress, () => {
   console.log(`Server on port http://${ipAddress}:${port}`);
 });

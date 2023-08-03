@@ -67,7 +67,8 @@ io.on('connection', (socket) => {
 });
 //creates server
 const port = 3000;
-const ipAddress = "192.168.29.226";
+const ipAddress = "192.168.29.226"; // Add the IPv4 Address of your network here
+
 server.listen(port, ipAddress, () => {
   console.log(`Server on port http://${ipAddress}:${port}`);
 });

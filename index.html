@@ -130,7 +130,7 @@
     //And on the client side when we capture a chat message event we’ll include it in the page.
     socket.on('chat message', (msg) => {
       var item = document.createElement('li');
-      item.textContent = msg;
+      item.textContent =  `${msg.nickname}: ${msg.msg}`;
       messages.appendChild(item);
       window.scrollTo(0, document.body.scrollHeight);
     });

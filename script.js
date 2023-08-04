@@ -46,12 +46,12 @@ io.on('connection', (socket) => {
         });
       } else {
         socket.emit('chat message', {
-          nickname: "Server",
+          nickname: `Server`,
           msg: `User "${recipient}" not found in the chat`,
         });
       }
     } else {
-      io.emit('chat message', nickname + ": " + msg);
+      io.emit('chat message', { nickname: nickname, msg: msg });
     }
   });
 
